@@ -1,12 +1,17 @@
 package br.com.zup.Exercicio001;
 
 public class Bola {
-    String circunferencia;
+    double circunferencia;
     String cor;
     String marca;
-    String velocidade;
+    double velocidade;
 
-    public Bola(){
+    public Bola(double circunferencia, String cor, String marca, double velocidade) {
+        this.circunferencia = circunferencia;
+        this.cor = cor;
+        this.marca = marca;
+        this.velocidade = velocidade
 
     }
+
 }
