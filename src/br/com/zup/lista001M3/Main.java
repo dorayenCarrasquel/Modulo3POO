@@ -1,10 +1,10 @@
-package br.com.zup;
+package br.com.zup.lista001M3;
 
-import br.com.zup.Exercicio001.Bola;
-import br.com.zup.Exercicio002.Pessoa;
-import br.com.zup.Exercicio003.ContaCorrente;
-import br.com.zup.Exercicio004.Carro;
-import br.com.zup.LevelUp.Pais;
+import br.com.zup.lista001M3.Exercicio001.Bola;
+import br.com.zup.lista001M3.Exercicio002.Pessoa;
+import br.com.zup.lista001M3.Exercicio003.ContaCorrente;
+import br.com.zup.lista001M3.Exercicio004.Carro;
+import br.com.zup.lista001M3.LevelUp.Pais;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,9 +41,9 @@ public class Main {
         int menu = 0;
 
         continente.add(new Pais("Venezuela", 916.45, 31.70));
-        continente.add (new Pais("Brazil", 8510.34, 211));
+        continente.add(new Pais("Brazil", 8510.34, 211));
         continente.add(new Pais("Chile", 756.95, 18.05));
-        continente.add (new Pais("Uruguai", 176.21, 3.35));
+        continente.add(new Pais("Uruguai", 176.21, 3.35));
 
 
         /* outra forma de adicionar na lista
@@ -52,29 +52,34 @@ public class Main {
         continente.add(chile);
         continente.add(uruguai);
         */
-        while (menu !=2){
+        while (menu != 2) {
             System.out.println("Menu Atlas");
             System.out.println("[1] Listar os países do Continente");
             System.out.println("[2] Sair");
             System.out.println("Marque uma opção: ");
             int opcao = leitor.nextInt();
 
-            switch (opcao){
+            switch (opcao) {
                 case 1:
                     System.out.println("Lista de Paises dentro do continente");
 
                     //https://java-programming.mooc.fi/part-4/2-objects-in-a-list
 
-                    for (Pais paises: continente) {
-                        System.out.println("\n"+ paises);
+                    for (Pais paises : continente) {
+                        System.out.println("\n\n" +paises);
+                        /* Erro
+                        System.out.println("\n" + paises.nome);
+                        System.out.println("\n" + paises.extensaoTerritorial);
+                        System.out.println("\n" + paises.tamanhopopulacao);
+                        */
                     }
                     System.out.println("\n\n");
 
-                break;
+                    break;
                 case 2:
                     System.out.println("Adios");
-                    menu=2;
-                break;
+                    menu = 2;
+                    break;
                 default:
                     System.out.println("Marque uma opção valida");
             }

@@ -1,4 +1,4 @@
-package br.com.zup.Exercicio003;
+package br.com.zup.lista001M3.Exercicio003;
 
 public class ContaCorrente {
     String numeroDaConta;

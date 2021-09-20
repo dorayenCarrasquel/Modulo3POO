@@ -1,4 +1,4 @@
-package br.com.zup.Exercicio002;
+package br.com.zup.lista001M3.Exercicio002;
 
 public class Pessoa {
     String nome;

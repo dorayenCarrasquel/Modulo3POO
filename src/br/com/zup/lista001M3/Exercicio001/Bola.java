@@ -1,4 +1,4 @@
-package br.com.zup.Exercicio001;
+package br.com.zup.lista001M3.Exercicio001;
 
 public class Bola {
     double circunferencia;
