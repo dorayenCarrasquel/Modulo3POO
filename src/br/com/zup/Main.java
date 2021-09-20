@@ -3,6 +3,7 @@ package br.com.zup;
 import br.com.zup.Exercicio001.Bola;
 import br.com.zup.Exercicio002.Pessoa;
 import br.com.zup.Exercicio003.ContaCorrente;
+import br.com.zup.Exercicio004.Carro;
 
 public class Main {
 
@@ -23,6 +24,11 @@ public class Main {
         ContaCorrente b123 = new ContaCorrente("123456789","Beyonce Knowlege");
         ContaCorrente r456= new ContaCorrente("456123789", "Rihana Fenty");
         ContaCorrente t789 = new ContaCorrente("789456123", "Taylor Swift");
+
+        //Exercicio 004
+        Carro branco = new Carro(4,"Fiesta", "Ford");
+        Carro vermelho = new Carro(2,"huracan", "Lamborghini");
+        Carro azul  =   new Carro(4,"X90D", "Tesla")
         //Level-Up
     }
 
