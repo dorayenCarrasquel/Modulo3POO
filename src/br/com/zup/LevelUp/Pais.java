@@ -20,6 +20,7 @@ public class Pais {
         return this.tamanhopopulacao;
     }
     @Override
+    //https://pt.stackoverflow.com/questions/22913/qual-a-finalidade-da-override
     public String toString(){
         return this.nome+", Extensão Territorial: "+this.extensaoTerritorial+", Tamanho da População: "+this.tamanhopopulacao;
     }
