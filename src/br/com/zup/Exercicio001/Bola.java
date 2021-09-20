@@ -10,7 +10,7 @@ public class Bola {
         this.circunferencia = circunferencia;
         this.cor = cor;
         this.marca = marca;
-        this.velocidade = velocidade
+        this.velocidade = velocidade;
 
     }
 
