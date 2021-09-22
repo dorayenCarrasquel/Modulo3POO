@@ -14,15 +14,19 @@ public class Elevador {
         this.capacidadElevador = capacidadElevador;
         this.pessoasNoElevador = pessoasNoElevador;
     }
-    public int getAndar(){
+
+    public int getAndar() {
         return andar;
     }
-    public int getQuantidadDeAndares(){
+
+    public int getQuantidadDeAndares() {
         return quantidadDeAndares;
     }
-    public int getCapacidadElevador(){
+
+    public int getCapacidadElevador() {
         return capacidadElevador;
     }
+
     public int getPessoasNoElevador() {
         return pessoasNoElevador;
     }
@@ -31,9 +35,11 @@ public class Elevador {
     public void setAndar(int andar) {
         this.andar = andar;
     }
-    public void setQuantidadDeAndares(int quantidadDeAndares){
+
+    public void setQuantidadDeAndares(int quantidadDeAndares) {
         this.quantidadDeAndares = quantidadDeAndares;
     }
+
     public void setCapacidadElevador(int capacidadElevador) {
         this.capacidadElevador = capacidadElevador;
     }
@@ -102,7 +108,7 @@ public class Elevador {
             andar++;
 
         } else {
-            while (andar>andarbaixar) {
+            while (andar > andarbaixar) {
                 System.out.println(andar);
                 andar--;
             }

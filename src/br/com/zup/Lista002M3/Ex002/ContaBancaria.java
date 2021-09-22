@@ -19,15 +19,15 @@ public class ContaBancaria {
 
     //Getter
 
-    public String getNomeCorrentista(){
+    public String getNomeCorrentista() {
         return nomeCorrentista;
     }
 
-    public String getNumeroConta(){
+    public String getNumeroConta() {
         return numeroConta;
     }
 
-    public double getSaldo(){
+    public double getSaldo() {
         return saldo;
     }
 
@@ -47,11 +47,13 @@ public class ContaBancaria {
     public void deposito(double adicionar) {
         saldo = saldo + adicionar;
     }
+
     //Setter
-    public void setNome(String nomeCorrentista){
+    public void setNome(String nomeCorrentista) {
         this.nomeCorrentista = nomeCorrentista;
     }
-    public void setNumeroConta(String numeroConta){
+
+    public void setNumeroConta(String numeroConta) {
         this.numeroConta = numeroConta;
     }
 
