@@ -6,30 +6,39 @@ public class CartaoCredito {
     double saldoFatura;
 
 
-    public CartaoCredito(String nomeCliente, double limite, double saldoFatura){
-        this.nomeCliente=nomeCliente;
-        this.limite=limite;
-        this.saldoFatura=saldoFatura;
+    public CartaoCredito(String nomeCliente, double limite, double saldoFatura) {
+        this.nomeCliente = nomeCliente;
+        this.limite = limite;
+        this.saldoFatura = saldoFatura;
     }
-    public void aumentolimite(double solicitandoLimite){
-        limite = limite + solicitandoLimite;
+
+    public void aumentolimite(double solicitandoLimite) {
+        if (limite <= solicitandoLimite) {
+            limite = limite + solicitandoLimite;
+        } else {
+            System.out.println("Limite não aprovado");
+        }
     }
-    public void diminuilimite(double diminuindoLimite){
-        limite = limite-diminuindoLimite;
+
+    public void diminuilimite(double diminuindoLimite) {
+        limite = limite - diminuindoLimite;
+        System.out.println("Diminução Realizada com exito");
+
     }
-    public void realizaCompra(double valorCompra){
+
+    public void realizaCompra(double valorCompra) {
         double compra = limite - valorCompra;
-        if (compra > limite & compra <= 0){
+        if (compra > limite & compra <= 0) {
             System.out.println("\n=====================");
             System.out.println("Compra Rechazada");
             System.out.println("=====================");
-        }
-        else {
-            limite= limite - valorCompra;
-            saldoFatura=valorCompra;
+        } else {
+            limite = limite - valorCompra;
+            saldoFatura = valorCompra;
         }
     }
-    public void ImprimeFatura(){
+
+    public void ImprimeFatura() {
         System.out.println("\n************************");
         System.out.println("*** Factura de Compra ***");
         System.out.println("************************");
