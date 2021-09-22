@@ -4,18 +4,20 @@ public class CartaoCredito {
     String nomeCliente;
     double limite;
     double saldoFatura;
+    double limitemax;
 
 
-    public CartaoCredito(String nomeCliente, double limite, double saldoFatura) {
+    public CartaoCredito(String nomeCliente, double limite, double saldoFatura, double limitemax) {
         this.nomeCliente = nomeCliente;
         this.limite = limite;
         this.saldoFatura = saldoFatura;
+        this.limitemax = limitemax;
     }
 
     public void aumentolimite(double solicitandoLimite) {
-        if (limite <= solicitandoLimite) {
-            limite = limite + solicitandoLimite;
-        } else {
+        if (solicitandoLimite<=limitemax){
+            limite = solicitandoLimite;
+        } else{
             System.out.println("Limite não aprovado");
         }
     }
@@ -27,8 +29,8 @@ public class CartaoCredito {
     }
 
     public void realizaCompra(double valorCompra) {
-        double compra = limite - valorCompra;
-        if (compra > limite & compra <= 0) {
+
+        if (valorCompra>limite || valorCompra<=0) {
             System.out.println("\n=====================");
             System.out.println("Compra Rechazada");
             System.out.println("=====================");
