@@ -1,4 +1,4 @@
-package br.com.zup.lista001M3;
+package br.com.zup.lista001M3.LevelUp;
 
 import br.com.zup.lista001M3.Exercicio001.Bola;
 import br.com.zup.lista001M3.Exercicio002.Pessoa;

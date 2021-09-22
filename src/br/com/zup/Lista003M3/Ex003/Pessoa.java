@@ -4,10 +4,12 @@ import java.util.Date;
 
 public class Pessoa {
     private String nome;
-    private String dataNascimento;
+    private Data dataNascimento;
     private double altura;
+    private int idade;
 
-    public Pessoa(String nome, int dataNascimento, double altura) {
+
+    public Pessoa(String nome, Data dataNascimento, double altura) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.altura = altura;
@@ -19,40 +21,40 @@ public class Pessoa {
     }
 
     public void setNome(String nome) {
-        this.nome = nome
+        this.nome = nome;
     }
 
     //Data de nascimiento (considerando só o ano)
-    public int getDataNascimento() {
+    public Data getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(int dataNascimento) {
+    public void setDataNascimento(Data dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-//Altura
-    public double getAltura(){
+
+    //Altura
+    public double getAltura() {
         return altura;
     }
-    public void  setAltura(double altura){
+
+    public void setAltura(double altura) {
         this.altura = altura;
-    }
-    //manipulando data
-    public void anonascimento(){
-
-
     }
 
     //Calcular Idade
-    public void calcularIdade(){
-
+    public void calcularIdade(int anoAtual) {
+    int idade = anoAtual - dataNascimento.getAno();
+    this.idade = idade;
     }
-//Imprimir
-    public void imprimir(){
-        System.out.println("Nome: "+nome);
-        System.out.println("Data de nascimento: "+dataNascimento);
-        System.out.println("Altura: "+altura);
-        if ()
+
+    //Imprimir
+    public void imprimir() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Data de nascimento: " + dataNascimento.getDia()+"/"+dataNascimento.getMes()+"/"+dataNascimento.getAno());
+        System.out.println("Altura: " + altura);
+        System.out.println("Idade: "+idade);
+
     }
 
 }
