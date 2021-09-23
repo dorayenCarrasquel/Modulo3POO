@@ -34,6 +34,13 @@ public class Inimigos {
     public void trocarNome(String nome) {
         this.nome = nome;
     }
+    public void receberDano(double dano) {
+        double morrendo = this.getVida() - dano;
+        this.setVida(morrendo);
+    }
 
+    public double exibirVida() {
+        return vida;
+    }
 
 }
