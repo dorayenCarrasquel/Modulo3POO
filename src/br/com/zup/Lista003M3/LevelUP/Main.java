@@ -7,12 +7,15 @@ public class Main {
        lg.getVolume();
        lg.getCanal();
         System.out.println("Canal "+ lg.getCanal()+" Volume "+ lg.getVolume());
-        cr.aumentarVolumen(1);
+        cr.aumentarVolumen();
         cr.consultar();
-        cr.aumentarVolumen(1);
-        cr.aumentarVolumen(1);
+        cr.aumentarVolumen();
+        cr.retornarDados();
+        cr.aumentarVolumen();
         cr.consultar();
-        cr.diminuirVolumen(1);
+        cr.diminuirVolumen();
+        cr.consultar();
+        cr.trocarCanal(5);
         cr.consultar();
 
 

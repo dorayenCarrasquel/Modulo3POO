@@ -8,33 +8,38 @@ public class ControleRemoto {
     }
 
 
-    public void aumentarVolumen(int aumentar) {
+    public void aumentarVolumen() {
 
-        aumentar = tv.getVolume() + 1;
+        int aumentar = tv.getVolume() + 1;
         tv.setVolume(aumentar);
     }
 
-    public void diminuirVolumen(int diminuir) {
-        diminuir = tv.getVolume()-1;
+    public void diminuirVolumen() {
+        int diminuir = tv.getVolume() - 1;
         tv.setVolume(diminuir);
     }
 
-    public void avancarCanal(int canal){
-        canal = tv.getCanal()+1;
-        tv.setCanal(canal);
+    public void avancarCanal() {
+        int avancar = tv.getCanal() + 1;
+        tv.setCanal(avancar);
     }
-    public void regresarCanal(int canal){
 
-        canal = tv.getCanal()-1;
-        tv.setCanal(canal);
+    public void regresarCanal() {
+        int regresar = tv.getCanal() - 1;
+        tv.setCanal(regresar);
     }
-    public void trocarCanal(int trocar){
+
+    public void trocarCanal(int trocar) {
         tv.setCanal(trocar);
     }
 
 
     public void consultar() {
-        System.out.println("Volume: " + tv.getVolume());
+        System.out.println("\nVolume: " + tv.getVolume());
         System.out.println("Canal: " + tv.getCanal());
+    }
+    public String retornarDados(){
+        return "\nVolume: " + tv.getVolume()+
+                "Canal: " + tv.getCanal();
     }
 }
