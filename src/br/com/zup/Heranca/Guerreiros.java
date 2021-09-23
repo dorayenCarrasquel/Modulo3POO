@@ -3,6 +3,10 @@ package br.com.zup.Heranca;
 public class Guerreiros extends Heroi {
     private double poderDeAtaque;
 
+    public Guerreiros(){
+
+    }
+
     public Guerreiros(String nome, double vida, double poderDeAtaque) {
         super(nome, vida);
         this.poderDeAtaque = poderDeAtaque;
@@ -17,7 +21,6 @@ public class Guerreiros extends Heroi {
     }
 
     public double aplicarDano() {
-        double matando = getVida() - poderDeAtaque;
-        return matando;
+        return poderDeAtaque;
     }
 }

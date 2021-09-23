@@ -3,6 +3,10 @@ package br.com.zup.Heranca;
 public class Magos extends Heroi{
     private double poderMagico;
 
+    public Magos(){
+
+    }
+
     public Magos(String nome, double vida, double poderMagico) {
         super(nome, vida);
         this.poderMagico = poderMagico;
@@ -18,8 +22,7 @@ public class Magos extends Heroi{
 
 
     public double aplicarMagia(){
-        double matando = getVida() - poderMagico;
-            return matando;
+        return poderMagico;
 
     }
 

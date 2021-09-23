@@ -7,6 +7,10 @@ public class Inimigos {
 
     //constructor
 
+    public Inimigos(){
+
+    }
+
     public Inimigos(String nome, double vida) {
         this.nome = nome;
         this.vida = vida;
@@ -35,12 +39,12 @@ public class Inimigos {
         this.nome = nome;
     }
     public void receberDano(double dano) {
-        double morrendo = this.getVida() - dano;
+        double morrendo = this.vida - dano;
         this.setVida(morrendo);
     }
 
     public double exibirVida() {
-        return vida;
+        return this.vida;
     }
 
 }
