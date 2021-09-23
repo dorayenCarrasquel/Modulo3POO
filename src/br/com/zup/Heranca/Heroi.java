@@ -37,6 +37,8 @@ public class Heroi {
         int morrendo = this.getVida() - dano;
         this.setVida(morrendo);
     }
-
+    public double exibirVida(){
+        return vida
+    }
 
 }
