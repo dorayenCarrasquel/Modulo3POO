@@ -25,4 +25,10 @@ public class Heroi {
     public void setVida(double vida) {
         this.vida = vida;
     }
+
+    //Métodos Comunes
+    public void trocarNome(String nome){
+        this.nome = nome;
+    }
+
 }
