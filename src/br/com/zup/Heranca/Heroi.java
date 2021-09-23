@@ -2,8 +2,8 @@ package br.com.zup.Heranca;
 
 public class Heroi {
     //Atributos
-    String nome;
-    double vida;
+    private String nome;
+    private double vida;
 
     //Metodo Construtor
     public Heroi(String nome, double vida) {
@@ -37,7 +37,8 @@ public class Heroi {
         double morrendo = this.getVida() - dano;
         this.setVida(morrendo);
     }
-    public double exibirVida(){
+
+    public double exibirVida() {
         return vida;
     }
 
