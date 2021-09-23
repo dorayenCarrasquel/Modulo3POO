@@ -34,11 +34,11 @@ public class Heroi {
     }
 
     public void receberDano(double dano) {
-        int morrendo = this.getVida() - dano;
+        double morrendo = this.getVida() - dano;
         this.setVida(morrendo);
     }
     public double exibirVida(){
-        return vida
+        return vida;
     }
 
 }
