@@ -36,9 +36,9 @@ public class Forcenador extends Pessoa {
     }
 
     //métodos
-    public void obterSaldo(){
+    public double obterSaldo(){
         double saldo = valorCredito - valorDivida;
-        return ;
+        return saldo;
     }
 }
 
