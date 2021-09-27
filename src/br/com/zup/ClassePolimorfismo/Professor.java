@@ -1,18 +1,19 @@
 package br.com.zup.ClassePolimorfismo;
 
-public class Professores extends Funcionarios {
+public class Professor extends Funcionario {
     //Atributos
     private String nivelDeGraduacao;
     private String dsciplinaMinistrada;
     private int quantidadeDeAlunos;
     private int quantidadeDeTurmas;
 
+
     //Construtores
-    public Professores() {
+    public Professor() {
 
     }
 
-    public Professores(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String nivelDeGraduacao, String dsciplinaMinistrada, int quantidadeDeAlunos, int quantidadeDeTurmas) {
+    public Professor(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String nivelDeGraduacao, String dsciplinaMinistrada, int quantidadeDeAlunos, int quantidadeDeTurmas) {
         super(nome, cpf, numeroDeRegistro, orgaoDeLotacao, salario);
         this.nivelDeGraduacao = nivelDeGraduacao;
         this.dsciplinaMinistrada = dsciplinaMinistrada;
@@ -54,6 +55,7 @@ public class Professores extends Funcionarios {
         this.quantidadeDeTurmas = quantidadeDeTurmas;
     }
 
+//001 Aumento de salario
 
 
 }

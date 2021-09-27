@@ -1,16 +1,16 @@
 package br.com.zup.ClassePolimorfismo;
 
-public class FuncionariosAdministrativos extends Funcionarios {
+public class FuncionarioAdministrativos extends Funcionario {
 //Atributos
     private String funcaoAdministrativa;
     private String senioridade;
 
     //Contructores
-    public FuncionariosAdministrativos(){
+    public FuncionarioAdministrativos(){
 
     }
 
-    public FuncionariosAdministrativos(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String funcaoAdministrativa, String senioridade) {
+    public FuncionarioAdministrativos(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String funcaoAdministrativa, String senioridade) {
         super(nome, cpf, numeroDeRegistro, orgaoDeLotacao, salario);
         this.funcaoAdministrativa = funcaoAdministrativa;
         this.senioridade = senioridade;

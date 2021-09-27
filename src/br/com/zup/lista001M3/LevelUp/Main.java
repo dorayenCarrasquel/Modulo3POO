@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
+/*
         //Exercicio 001
         Bola tennis = new Bola(6.35, "Amarelo", "Wilson", 10.5);
         Bola basquet = new Bola(55.9, "laranja", "Nike", 5);
@@ -34,7 +34,7 @@ public class Main {
         Carro branco = new Carro(4, "Fiesta", "Ford");
         Carro vermelho = new Carro(2, "huracan", "Lamborghini");
         Carro azul = new Carro(4, "X90D", "Tesla");
-
+*/
         //Level-Up
         List<Pais> continente = new ArrayList<Pais>();
         Scanner leitor = new Scanner(System.in);
