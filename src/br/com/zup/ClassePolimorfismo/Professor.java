@@ -1,5 +1,6 @@
 package br.com.zup.ClassePolimorfismo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Professor extends Funcionario {
@@ -9,6 +10,7 @@ public class Professor extends Funcionario {
     private int quantidadeDeAlunos;
     private int quantidadeDeTurmas;
     private Turma turmaDoProfessor;
+
 
 
     //Construtores
@@ -59,6 +61,7 @@ public class Professor extends Funcionario {
         this.quantidadeDeTurmas = quantidadeDeTurmas;
     }
 
+
     public Turma getTurmaDoProfessor() {
         return turmaDoProfessor;
     }
@@ -69,9 +72,9 @@ public class Professor extends Funcionario {
 
     //Adicionando Turma
     public void adicionarTurma(Turma turmaAdd) {
-        turmaDoProfessor = turmaAdd;
-
+        List<Turma> turmas = new ArrayList<Turma>();
+        turmas.add(turmaAdd);
+        System.out.println("Adicionado com sucesso");
     }
-
 
 }

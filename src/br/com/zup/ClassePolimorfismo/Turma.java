@@ -1,20 +1,19 @@
 package br.com.zup.ClassePolimorfismo;
 
-public class Turma extends Professor{
+public class Turma {
     private String serie;
     private String curso;
     private int quantidadeDeAlunos;
+
 
     public Turma(){
 
     }
 
-    public Turma(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String nivelDeGraduacao, String dsciplinaMinistrada, int quantidadeDeAlunos, int quantidadeDeTurmas, String serie, String curso, int quantidadeDeAlunos1) {
-
-        super(nome, cpf, numeroDeRegistro, orgaoDeLotacao, salario, nivelDeGraduacao, dsciplinaMinistrada, quantidadeDeAlunos, quantidadeDeTurmas);
+    public Turma(String serie, String curso, int quantidadeDeAlunos) {
         this.serie = serie;
         this.curso = curso;
-        this.quantidadeDeAlunos = quantidadeDeAlunos1;
+        this.quantidadeDeAlunos = quantidadeDeAlunos;
     }
 
     public String getSerie() {
@@ -33,14 +32,19 @@ public class Turma extends Professor{
         this.curso = curso;
     }
 
-    @Override
     public int getQuantidadeDeAlunos() {
         return quantidadeDeAlunos;
     }
 
-    @Override
     public void setQuantidadeDeAlunos(int quantidadeDeAlunos) {
         this.quantidadeDeAlunos = quantidadeDeAlunos;
     }
+
+    public int getQuantidadeDeAlunos(int adicionarAlunos) {
+        adicionarAlunos = getQuantidadeDeAlunos()+adicionarAlunos;
+        return quantidadeDeAlunos;
+    }
+
+
 }
 
