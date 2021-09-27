@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
-        //Menu
+       // Menu
         boolean menu = true;
         Professor luis = new Professor("Luis", "123", "123a", "Curitiba", 1050, "Professor", "Math", 25, 2);
-        Coordenador vilma = new Coordenador("Vilma", "456", "456b", "Curitiba", 1500, "5");
+        Coordenador vilma = new Coordenador("Vilma", "123a","123","Curitiba",1230);
         FuncionarioAdministrativos adolfo = new FuncionarioAdministrativos("Adolfo", "789", "789c", "Curitiba", 1600, "Financeiro", "Doctor");
 
 
@@ -26,11 +26,14 @@ public class Main {
             System.out.println("====================================");
             switch (opcao) {
                 case 1:
-                    System.out.printf("Profesor: %s\t Salario: %.2f\t Aumento de salario: %.2f\n", luis.getNome(), luis.getSalario(), luis.aumentoDeSalario(luis.getSalario()));
-                    System.out.printf("Coordenador: %s\t Salario: %.2f\t Aumento de salario: %.2f\n", vilma.getNome(), vilma.getSalario(), vilma.aumentoDeSalario(vilma.getSalario()));
-                    System.out.printf("Administrativo: %s\t Salario: %.2f\t Aumento de salario: %.2f\n", adolfo.getNome(),adolfo.getSalario(),adolfo.aumentoDeSalario(adolfo.getSalario()));
-
+                    System.out.printf("Profesor: %s\t Salario: %.2f\t Aumento de salario: %.2f\n", luis.getNome(), luis.getSalario(), luis.aumentoDeSalario());
+                    luis.setSalario(luis.aumentoDeSalario());
+                    System.out.printf("Coordenador: %s\t Salario: %.2f\t Aumento de salario: %.2f\n", vilma.getNome(), vilma.getSalario(), vilma.aumentoDeSalario());
+                    vilma.setSalario(vilma.aumentoDeSalario());
+                    System.out.printf("Administrativo: %s\t Salario: %.2f\t Aumento de salario: %.2f\n", adolfo.getNome(),adolfo.getSalario(),adolfo.aumentoDeSalario());
+                    adolfo.setSalario(adolfo.aumentoDeSalario());
                     break;
+
                 case 2:
                     ler.nextLine();
                     System.out.println("Digite a serie da turma: ");
@@ -41,11 +44,13 @@ public class Main {
                     int qantAluno = ler.nextInt();
                     Turma ano1a = new Turma(serieTurma, cursoTurma,qantAluno);
                     luis.adicionarTurma(ano1a);
+                    System.out.println(ano1a);
+                    System.out.println(luis);
                     break;
 
                 case 3:
                     vilma.adicionarProfessor(luis);
-                    vilma.
+                    System.out.println(vilma);
                     break;
 
                 case 4:

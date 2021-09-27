@@ -78,4 +78,14 @@ public class Professor extends Funcionario {
 
     }
 
+    @Override
+    public String toString() {
+        return "Professor{" +
+                "nivelDeGraduacao='" + nivelDeGraduacao + '\'' +
+                ", dsciplinaMinistrada='" + dsciplinaMinistrada + '\'' +
+                ", quantidadeDeAlunos=" + quantidadeDeAlunos +
+                ", quantidadeDeTurmas=" + quantidadeDeTurmas +
+                ", turmaDoProfessor=" + turmaDoProfessor +
+                '}';
+    }
 }

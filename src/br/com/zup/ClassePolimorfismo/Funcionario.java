@@ -59,8 +59,9 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    public double aumentoDeSalario(double aumentoSalario) {
-        aumentoSalario = this.salario * 0.10;
+
+    public double aumentoDeSalario() {
+        double aumentoSalario = this.salario * 0.10;
         double salarioNovo = this.salario + aumentoSalario;
         return salarioNovo;
     }
