@@ -18,7 +18,8 @@ public class Main {
             System.out.println("\n=============== MENU ===============");
             System.out.println("[1] Calcular Aumento de Salario");
             System.out.println("[2] Adicionar Turma");
-            System.out.println("[3] sair");
+            System.out.println("[3] Adiscionar Professor");
+            System.out.println("[4] sair");
             System.out.println("====================================");
             System.out.println("Marque uma opçao: ");
             int opcao = ler.nextInt();
@@ -43,6 +44,11 @@ public class Main {
                     break;
 
                 case 3:
+                    vilma.adicionarProfessor(luis);
+                    vilma.
+                    break;
+
+                case 4:
                     System.out.println("Hasta la vista Baby");
                     menu = false;
                     break;

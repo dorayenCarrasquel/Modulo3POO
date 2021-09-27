@@ -75,6 +75,7 @@ public class Professor extends Funcionario {
         List<Turma> turmas = new ArrayList<Turma>();
         turmas.add(turmaAdd);
         System.out.println("Adicionado com sucesso");
+
     }
 
 }
