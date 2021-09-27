@@ -1,11 +1,14 @@
 package br.com.zup.ClassePolimorfismo;
 
+import java.util.List;
+
 public class Professor extends Funcionario {
     //Atributos
     private String nivelDeGraduacao;
     private String dsciplinaMinistrada;
     private int quantidadeDeAlunos;
     private int quantidadeDeTurmas;
+    private Turma turmaDoProfessor;
 
 
     //Construtores
@@ -19,6 +22,7 @@ public class Professor extends Funcionario {
         this.dsciplinaMinistrada = dsciplinaMinistrada;
         this.quantidadeDeAlunos = quantidadeDeAlunos;
         this.quantidadeDeTurmas = quantidadeDeTurmas;
+
     }
 
     //Getter & Setters
@@ -55,7 +59,19 @@ public class Professor extends Funcionario {
         this.quantidadeDeTurmas = quantidadeDeTurmas;
     }
 
-//001 Aumento de salario
+    public Turma getTurmaDoProfessor() {
+        return turmaDoProfessor;
+    }
+
+    public void setTurmaDoProfessor(Turma turmaDoProfessor) {
+        this.turmaDoProfessor = turmaDoProfessor;
+    }
+
+    //Adicionando Turma
+    public void adicionarTurma(Turma turmaAdd) {
+        turmaDoProfessor = turmaAdd;
+
+    }
 
 
 }

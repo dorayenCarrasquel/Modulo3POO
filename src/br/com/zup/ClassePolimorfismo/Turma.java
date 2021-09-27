@@ -5,6 +5,10 @@ public class Turma extends Professor{
     private String curso;
     private int quantidadeDeAlunos;
 
+    public Turma(){
+
+    }
+
     public Turma(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String nivelDeGraduacao, String dsciplinaMinistrada, int quantidadeDeAlunos, int quantidadeDeTurmas, String serie, String curso, int quantidadeDeAlunos1) {
 
         super(nome, cpf, numeroDeRegistro, orgaoDeLotacao, salario, nivelDeGraduacao, dsciplinaMinistrada, quantidadeDeAlunos, quantidadeDeTurmas);
