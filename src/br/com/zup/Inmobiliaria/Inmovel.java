@@ -10,7 +10,9 @@ public class Inmovel {
     private boolean iptu;
     private String tipoDeVivienda;
     private int quantidadMoradores;
+    private Responsavel corretor;
     private List<Morador>moradores = new ArrayList<>();
+
 
     public Inmovel(){
 
@@ -24,6 +26,14 @@ public class Inmovel {
         this.tipoDeVivienda = tipoDeVivienda;
         this.quantidadMoradores = quantidadMoradores;
 
+    }
+
+    public Responsavel getCorretor() {
+        return corretor;
+    }
+
+    public void setCorretor(Responsavel corretor) {
+        this.corretor = corretor;
     }
 
     public String getEndereco() {
@@ -74,9 +84,13 @@ public class Inmovel {
         this.quantidadMoradores = quantidadMoradores;
     }
 
+    public List<Morador> getMoradores() {
+        return moradores;
+    }
 
     public void adicionarMorador(Morador nuevoMorador){
         moradores.add(nuevoMorador);
+        quantidadMoradores = moradores.size();
     }
 
     @Override
@@ -88,6 +102,7 @@ public class Inmovel {
         retorno.append("\nPaga IPTU: \t"+iptu);
         retorno.append("\nTipo de Inmueble: \t"+tipoDeVivienda);
         retorno.append("\nQuantidad de moradores: \t" +quantidadMoradores);
+        retorno.append("\nMoradores: \t"+moradores);
         return retorno.toString();
     }
 }

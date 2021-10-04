@@ -1,33 +1,22 @@
 package br.com.zup.Inmobiliaria;
 
-public class Morador {
-    private String nomeMorador;
-    private String cpf;
+public class Morador extends Pessoa{
+    //Atributos
     private int idade;
     private String parentesco;
 
-    public Morador(String nomeMorador, String cpf, int idade, String parentesco) {
-        this.nomeMorador = nomeMorador;
-        this.cpf = cpf;
+    //Contructores
+    public Morador(){
+
+    }
+
+    public Morador(String nome, String cpf, int idade, String parentesco) {
+        super(nome, cpf);
         this.idade = idade;
         this.parentesco = parentesco;
     }
 
-    public String getNomeMorador() {
-        return nomeMorador;
-    }
-
-    public void setNomeMorador(String nomeMorador) {
-        this.nomeMorador = nomeMorador;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+    //Getters & Setters
 
     public int getIdade() {
         return idade;
@@ -48,7 +37,9 @@ public class Morador {
     @Override
     public String toString() {
         StringBuilder moradoresEx = new StringBuilder();
-        moradoresEx.append("\n Nome: \t"+nomeMorador);
+        moradoresEx.append(super);
+        moradoresEx.append("\n Idade: \t"+idade);
+        moradoresEx.append("\n Parentesco: \t" +parentesco);
 
         return moradoresEx.toString();
     }
