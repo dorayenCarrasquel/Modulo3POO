@@ -1,15 +1,15 @@
 package br.com.zup.Inmobiliaria;
 
-public class Morador extends Pessoa{
+public class Morador extends Pessoa {
     //Atributos
     private int idade;
-    private String parentesco;
+    private double renda;
 
     //Contructores
-       public Morador(String nome, String cpf, int idade, String parentesco) {
+    public Morador(String nome, String cpf, int idade, Double renda) {
         super(nome, cpf);
         this.idade = idade;
-        this.parentesco = parentesco;
+        this.renda = renda;
     }
 
     //Getters & Setters
@@ -22,20 +22,20 @@ public class Morador extends Pessoa{
         this.idade = idade;
     }
 
-    public String getParentesco() {
-        return parentesco;
+    public double getRenda() {
+        return renda;
     }
 
-    public void setParentesco(String parentesco) {
-        this.parentesco = parentesco;
+    public void setRenda(double renda) {
+        this.renda = renda;
     }
 
     @Override
     public String toString() {
         StringBuilder moradoresEx = new StringBuilder();
         moradoresEx.append(super.toString());
-        moradoresEx.append("\n Idade: \t"+idade);
-        moradoresEx.append("\n Parentesco: \t" +parentesco);
+        moradoresEx.append("\n Idade: \t" + idade);
+        moradoresEx.append("\n Renda: \t" + renda);
 
         return moradoresEx.toString();
     }
