@@ -13,9 +13,17 @@ public class Inmovel {
     private Responsavel corretor;
     private List<Morador>moradores = new ArrayList<>();
 
-
     public Inmovel(){
 
+    }
+    public Inmovel(String endereco, double valorAluguel, int quartos, boolean iptu, String tipoDeVivienda, int quantidadMoradores, Responsavel corretor) {
+        Endereco = endereco;
+        this.valorAluguel = valorAluguel;
+        this.quartos = quartos;
+        this.iptu = iptu;
+        this.tipoDeVivienda = tipoDeVivienda;
+        this.quantidadMoradores = quantidadMoradores;
+        this.corretor = corretor;
     }
 
     public Inmovel(String endereco, double valorAluguel, int quartos, boolean iptu, String tipoDeVivienda, int quantidadMoradores, Responsavel corretor, List<Morador> moradores) {

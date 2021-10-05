@@ -1,28 +1,28 @@
 package br.com.zup.Inmobiliaria;
 
 public class Responsavel extends Pessoa{
-      private Inmovel corretor;
-    //private String ctps;
+     // private Inmovel corretor;
+    private String ctps;
 
 
-    public Responsavel(String nome, String cpf, Inmovel corretor) {
+    public Responsavel(String nome, String cpf, String ctps) {
         super(nome, cpf);
-        this.corretor = corretor;
+        this.ctps = ctps;
     }
 
-    public Inmovel getCorretor() {
-        return corretor;
+    public String getCtps() {
+        return ctps;
     }
 
-    public void setCorretor(Inmovel corretor) {
-        this.corretor = corretor;
+    public void setCtps(String ctps) {
+        this.ctps = ctps;
     }
 
     @Override
     public String toString(){
         StringBuilder retorno = new StringBuilder();
         retorno.append(super.toString());
-        retorno.append("Corretor: "+ corretor);
+        retorno.append("Carteira de Trabalho do Corretor: "+ctps);
         return retorno.toString();
     }
 }
