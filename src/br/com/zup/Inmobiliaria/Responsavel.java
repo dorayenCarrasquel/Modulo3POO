@@ -1,31 +1,13 @@
 package br.com.zup.Inmobiliaria;
 
-public class Responsavel {
-    private String nomeResponsavel;
-    private String cpf;
-    private Inmovel corretor;
+public class Responsavel extends Pessoa{
+      private Inmovel corretor;
     //private String ctps;
 
-    public Responsavel(String nomeResponsavel, String cpf, Inmovel corretor) {
-        this.nomeResponsavel = nomeResponsavel;
-        this.cpf = cpf;
+
+    public Responsavel(String nome, String cpf, Inmovel corretor) {
+        super(nome, cpf);
         this.corretor = corretor;
-    }
-
-    public String getNomeResponsavel() {
-        return nomeResponsavel;
-    }
-
-    public void setNomeResponsavel(String nomeResponsavel) {
-        this.nomeResponsavel = nomeResponsavel;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public Inmovel getCorretor() {
@@ -39,8 +21,8 @@ public class Responsavel {
     @Override
     public String toString(){
         StringBuilder retorno = new StringBuilder();
-        retorno.append("Responsavel: "+nomeResponsavel);
-        retorno.append("CPF Responsavel: "+cpf);
+        retorno.append(super.toString());
+        retorno.append("Corretor: "+ corretor);
         return retorno.toString();
     }
 }

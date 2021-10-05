@@ -18,14 +18,15 @@ public class Inmovel {
 
     }
 
-    public Inmovel(String endereco, double valorAluguel, int quartos, boolean iptu, String tipoDeVivienda, int quantidadMoradores) {
-        this.Endereco = endereco;
+    public Inmovel(String endereco, double valorAluguel, int quartos, boolean iptu, String tipoDeVivienda, int quantidadMoradores, Responsavel corretor, List<Morador> moradores) {
+        Endereco = endereco;
         this.valorAluguel = valorAluguel;
         this.quartos = quartos;
         this.iptu = iptu;
         this.tipoDeVivienda = tipoDeVivienda;
         this.quantidadMoradores = quantidadMoradores;
-
+        this.corretor = corretor;
+        this.moradores = moradores;
     }
 
     public Responsavel getCorretor() {

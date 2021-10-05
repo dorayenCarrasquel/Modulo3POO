@@ -6,11 +6,7 @@ public class Morador extends Pessoa{
     private String parentesco;
 
     //Contructores
-    public Morador(){
-
-    }
-
-    public Morador(String nome, String cpf, int idade, String parentesco) {
+       public Morador(String nome, String cpf, int idade, String parentesco) {
         super(nome, cpf);
         this.idade = idade;
         this.parentesco = parentesco;
@@ -37,7 +33,7 @@ public class Morador extends Pessoa{
     @Override
     public String toString() {
         StringBuilder moradoresEx = new StringBuilder();
-        moradoresEx.append(super);
+        moradoresEx.append(super.toString());
         moradoresEx.append("\n Idade: \t"+idade);
         moradoresEx.append("\n Parentesco: \t" +parentesco);
 
