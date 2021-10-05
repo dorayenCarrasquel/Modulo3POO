@@ -1,5 +1,7 @@
 package br.com.zup.Inmobiliaria;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -19,14 +21,27 @@ public class Sistema {
     }
 
     //Entrega Minima Cadastrar inmovel, exibir inmovels
+    //passo 1 cadastrar unico morador
     public static Morador cadastrarMorador() {
         String nomeMor = receverDados("Digite o nome do morador: ").nextLine();
         String cpfMor = receverDados("Digite o CPF do morador: ").nextLine();
         int idadeMor = receverDados("Digite a idade do Morado: ").nextInt();
         double renda = receverDados("Digite a renda do morador: ").nextDouble();
-
+        System.out.println("\n============================================");
         Morador objMorador = new Morador(nomeMor, cpfMor, idadeMor, renda);
         return objMorador;
+    }
+
+    // passo 2 Lista de moradores
+    public static List moradoresEmLista() {
+        List<Morador> moradores = new ArrayList<>();
+        int numMor = receverDados("Digite o numeros do Moradores a cadastrar no inmovel").nextInt();
+
+        for (int i = 0; i < numMor; i++) {
+            moradores.add(cadastrarMorador());
+        }
+        System.out.println(moradores);
+        return moradores;
     }
 
     //Executar
@@ -37,8 +52,7 @@ public class Sistema {
             int opcaoMenu = receverDados("Digite uma opção valida: ").nextInt();
             if (opcaoMenu == 1) {
                 System.out.println("1 . Cadastro do usuario");
-                Morador morador1 = cadastrarMorador();
-                System.out.println(morador1);
+                moradoresEmLista();
 
             } else if (opcaoMenu == 2) {
                 System.out.println("2. Exibir dados do Inmovel");
