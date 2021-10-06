@@ -18,7 +18,7 @@ public class Sistema {
     public static void menu() {
         System.out.println("******************** M * E * N * U *********************************");
         System.out.println("[1] Cadastrar inmovel");
-        System.out.println("[2] Exibir dados do inmovel");
+        System.out.println("[2] Exibir dados da inmoviliaria");
         System.out.println("[3] Sair");
 
     }
@@ -68,14 +68,17 @@ public class Sistema {
         String tipoDeVivienda = receverDados("Indique tipo de vivienda: ").nextLine();
         int numMor = receverDados("Digite o numeros do Moradores a cadastrar no inmovel").nextInt();
         Inmovel resCaracas = new Inmovel(endereco, valorAluguel, quartos, iptu, tipoDeVivienda, cadastroCorretor());
-
-
-
         for (int i = 0; i < numMor; i++) {
             resCaracas.adicionarMorador(cadastrarMorador());
         }
         return resCaracas;
     }
+    //Adicionando mais de um inmovel
+    public static void addInmovelaMais(Inmobiliaria inmovels){
+        inmovels.cadastrarInmovelInmovi(cadastroInmovel());
+
+           }
+
 // passo 2 adicionando objeto na Lista de moradores
 //    public static List moradoresEmLista() {
 //        List<Morador> moradores = new ArrayList<>();
@@ -97,9 +100,9 @@ public class Sistema {
             menu();
             int opcaoMenu = receverDados("Digite uma opção valida: ").nextInt();
             if (opcaoMenu == 1) {
-                System.out.println("1 . Cadastro do usuario");
+                System.out.println("1 . Cadastro do inmovel");
                 System.out.println("============================================");
-                casaDosSonos.cadastrarInmovelInmovi(cadastroInmovel());
+                addInmovelaMais(casaDosSonos);
                 System.out.println("============================================");
 
 
