@@ -1,11 +1,13 @@
 package br.com.zup.Inmobiliaria;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
-   //instanciar inmoviliar padrão
-    Inmobiliaria inmFerrara = new Inmobiliaria();
+    //instanciar inmoviliar padrão
+
+
     //Captura de Dados
     private static Scanner receverDados(String mensagem) {
         System.out.println(mensagem);
@@ -22,7 +24,7 @@ public class Sistema {
     }
 
     //Entrega Minima Cadastrar inmovel, exibir inmovels
-    //passo 1 cadastrar unico morador
+    //passo 1 criar objeto
     public static Morador cadastrarMorador() {
         String nomeMor = receverDados("Digite o nome do morador: ").nextLine();
         String cpfMor = receverDados("Digite o CPF do morador: ").nextLine();
@@ -33,55 +35,79 @@ public class Sistema {
         return objMorador;
     }
 
-    // passo 2 Lista de moradores
-    public static List moradoresEmLista() {
-        List<Morador> moradores = new ArrayList<>();
-        int numMor = receverDados("Digite o numeros do Moradores a cadastrar no inmovel").nextInt();
 
-        for (int i = 0; i < numMor; i++) {
-            moradores.add(cadastrarMorador());
-        }
-        System.out.println(moradores);
-        return moradores;
-    }
-    // passo3 Cadastrar funcionario
-    public static Responsavel cadastroCorretor(){
+    // passo3 criar objeto funcionario
+    public static Responsavel cadastroCorretor() {
         String nomeFun = receverDados("Digite o nome do Corretor Responsaivel: ").nextLine();
         String cpfFunc = receverDados("Digite o número do CPF do corretor: ").nextLine();
         String ctps = receverDados("Digite o número da Carteira de trabalho do corretor: ").nextLine();
-        Responsavel corretorInm = new Responsavel(nomeFun,cpfFunc,ctps);
+        Responsavel corretorInm = new Responsavel(nomeFun, cpfFunc, ctps);
         return corretorInm;
     }
 
+    //Validar IPTU
+    private static boolean validarIptu() {
+        boolean iptuvalidado = false;
+        String pagoIptu = receverDados("O morador está excento de IPTU? digite SIM o NÃO").nextLine();
+        if (pagoIptu.equalsIgnoreCase("sim")) {
+            iptuvalidado = true;
+        } else if (pagoIptu.equalsIgnoreCase("não")) {
+            iptuvalidado = false;
+        } else {
+            System.out.println("Valor digitado não corresponde");
+        }
+        return iptuvalidado;
+    }
+
     //passo 4 Cadastrar um inmovel
-    public static Inmovel cadastroInmovel(){
+    public static Inmovel cadastroInmovel() {
         String endereco = receverDados("Digite o endereço do inmovel: ").nextLine();
         double valorAluguel = receverDados("Digite o valor do aluguel: ").nextDouble();
         int quartos = receverDados("Digite o número de habitações do inmovel: ").nextInt();
-        boolean iptu = receverDados("O Morador debe pagar IPTU? ").nextBoolean();
+        boolean iptu = validarIptu();
         String tipoDeVivienda = receverDados("Indique tipo de vivienda: ").nextLine();
-        int quantidadMoradores = moradoresEmLista().size();
+        int numMor = receverDados("Digite o numeros do Moradores a cadastrar no inmovel").nextInt();
+        Inmovel resCaracas = new Inmovel(endereco, valorAluguel, quartos, iptu, tipoDeVivienda, cadastroCorretor());
 
-        Inmovel resCaracas = new Inmovel(endereco,valorAluguel,quartos,iptu,tipoDeVivienda,quantidadMoradores,cadastroCorretor(),moradoresEmLista());
+
+
+        for (int i = 0; i < numMor; i++) {
+            resCaracas.adicionarMorador(cadastrarMorador());
+        }
         return resCaracas;
     }
+// passo 2 adicionando objeto na Lista de moradores
+//    public static List moradoresEmLista() {
+//        List<Morador> moradores = new ArrayList<>();
+//
+//        int numMor = receverDados("Digite o numeros do Moradores a cadastrar no inmovel").nextInt();
+//
+//        for (int i = 0; i < numMor; i++) {
+//            moradores.add(cadastrarMorador());
+//        }
+//        return moradores;
 
-    //Executar
+
+
     public static void executar() {
-        boolean loopMenu = true;
+        Inmobiliaria casaDosSonos = new Inmobiliaria();
 
+        boolean loopMenu = true;
         while (loopMenu) {
             menu();
             int opcaoMenu = receverDados("Digite uma opção valida: ").nextInt();
             if (opcaoMenu == 1) {
                 System.out.println("1 . Cadastro do usuario");
-                moradoresEmLista();
-                cadastroCorretor();
-                System.out.println();;
+                System.out.println("============================================");
+                casaDosSonos.cadastrarInmovelInmovi(cadastroInmovel());
+                System.out.println("============================================");
 
 
             } else if (opcaoMenu == 2) {
                 System.out.println("2. Exibir dados do Inmovel");
+                System.out.println("********************************************");
+                System.out.println(casaDosSonos);
+                System.out.println("********************************************");
 
             } else if (opcaoMenu == 3) {
                 System.out.println("Saindo do sistema");

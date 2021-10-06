@@ -1,12 +1,25 @@
 package br.com.zup.Inmobiliaria;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Inmobiliaria {
-    private Morador mora1;
-    private String nomeCliente;
+    private List<Inmovel>inmovelsLista = new ArrayList<>();
 
-    private Inmovel aptoB01;
-    private Responsavel jrcuritiva;
-    private String NomeResponsavel;
-    private String cpfResponsavel;
+    public List<Inmovel> getInmovelsLista() {
+        return inmovelsLista;
+    }
 
+    public void cadastrarInmovelInmovi (Inmovel inmovel){
+        inmovelsLista.add(inmovel);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder retorno = new StringBuilder();
+        retorno.append("Inmoveis Listados: "+inmovelsLista);
+        return retorno.toString();
+    }
 }
+
+

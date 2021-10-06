@@ -9,20 +9,19 @@ public class Inmovel {
     private int quartos;
     private boolean iptu;
     private String tipoDeVivienda;
-    private int quantidadMoradores;
+
     private Responsavel corretor;
     private List<Morador>moradores = new ArrayList<>();
 
     public Inmovel(){
 
     }
-    public Inmovel(String endereco, double valorAluguel, int quartos, boolean iptu, String tipoDeVivienda, int quantidadMoradores, Responsavel corretor) {
+    public Inmovel(String endereco, double valorAluguel, int quartos, boolean iptu, String tipoDeVivienda,  Responsavel corretor) {
         Endereco = endereco;
         this.valorAluguel = valorAluguel;
         this.quartos = quartos;
         this.iptu = iptu;
         this.tipoDeVivienda = tipoDeVivienda;
-        this.quantidadMoradores = quantidadMoradores;
         this.corretor = corretor;
     }
 
@@ -32,7 +31,6 @@ public class Inmovel {
         this.quartos = quartos;
         this.iptu = iptu;
         this.tipoDeVivienda = tipoDeVivienda;
-        this.quantidadMoradores = quantidadMoradores;
         this.corretor = corretor;
         this.moradores = moradores;
     }
@@ -85,21 +83,12 @@ public class Inmovel {
         this.tipoDeVivienda = tipoDeVivienda;
     }
 
-    public int getQuantidadMoradores() {
-        return quantidadMoradores;
-    }
-
-    public void setQuantidadMoradores(int quantidadMoradores) {
-        this.quantidadMoradores = quantidadMoradores;
-    }
-
     public List<Morador> getMoradores() {
         return moradores;
     }
 
     public void adicionarMorador(Morador nuevoMorador){
         moradores.add(nuevoMorador);
-        quantidadMoradores = moradores.size();
     }
 
     @Override
@@ -110,7 +99,7 @@ public class Inmovel {
         retorno.append("\nEspaços do Aluguel: \t"+quartos);
         retorno.append("\nPaga IPTU: \t"+iptu);
         retorno.append("\nTipo de Inmueble: \t"+tipoDeVivienda);
-        retorno.append("\nQuantidad de moradores: \t" +quantidadMoradores);
+        retorno.append("\nQuantidad de moradores: \t" + moradores.size());
         retorno.append("\nMoradores: \t"+moradores);
         return retorno.toString();
     }
