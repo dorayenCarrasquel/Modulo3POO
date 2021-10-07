@@ -83,24 +83,24 @@ public class Sistema {
             Morador moradorNoInmovel = cadastrarMorador();
             if (i == 1) {
                 resCaracas.adicionarMorador(moradorNoInmovel);
-            }
-            else if (i>1){
-            validarCPF(resCaracas, moradorNoInmovel);
+            } else if (i > 1) {
+                validarCPF(resCaracas, moradorNoInmovel);
 
             }
             return resCaracas;
         }
+        return resCaracas;
+    }
+//        //Adicionando mais de um inmovel
+//        public static void addInmovelaMais(Inmobiliaria inmovels){
+//            inmovels.cadastrarInmovelInmovi(cadastroInmovel());
+//
+//        }
 
-        //Adicionando mais de um inmovel
-        public static Inmovel addInmovelaMais(){
-            inmovels.cadastrarInmovelInmovi(cadastroInmovel());
-
-        }
-
-        //Excluir morador de um endereço específico
-        public static void excluirMorador (Inmobiliaria inmoveis){
-            String moradorRemover = receverDados("Digite o ").nextLine();
-        }
+//        //Excluir morador de um endereço específico
+//        public static void excluirMorador (Inmobiliaria inmoveis){
+//            String moradorRemover = receverDados("Digite o ").nextLine();
+//        }
 
 // passo 2 adicionando objeto na Lista de moradores
 //    public static List moradoresEmLista() {
@@ -114,7 +114,7 @@ public class Sistema {
 //        return moradores;
 
 
-        public static void executar () {
+        public static void executar() {
             Inmobiliaria casaDosSonos = new Inmobiliaria();
 
             boolean loopMenu = true;
@@ -124,7 +124,7 @@ public class Sistema {
                 if (opcaoMenu == 1) {
                     System.out.println("1 . Cadastro do inmovel");
                     System.out.println("============================================");
-                    addInmovelaMais(casaDosSonos);
+                    //addInmovelaMais(casaDosSonos);
                     System.out.println("============================================");
                 } else if (opcaoMenu == 2) {
                     System.out.println("2. Exibir dados do Inmovel");
