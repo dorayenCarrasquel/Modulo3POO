@@ -5,9 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
-    //instanciar inmoviliar padrão
-
-
     //Captura de Dados
     private static Scanner receverDados(String mensagem) {
         System.out.println(mensagem);
@@ -19,7 +16,9 @@ public class Sistema {
         System.out.println("******************** M * E * N * U *********************************");
         System.out.println("[1] Cadastrar inmovel");
         System.out.println("[2] Exibir dados da inmoviliaria");
-        System.out.println("[3] Sair");
+        System.out.println("[3] Excluir morador no inmovel");
+        System.out.println("[4] Adicionar morador no inmovel");
+        System.out.println("[5] Sair");
 
     }
 
@@ -27,11 +26,11 @@ public class Sistema {
     //passo 1 criar objeto
     public static Morador cadastrarMorador() {
         String nomeMor = receverDados("Digite o nome do morador: ").nextLine();
-        String cpfMor = receverDados("Digite o CPF do morador: ").nextLine();
         int idadeMor = receverDados("Digite a idade do Morado: ").nextInt();
         double renda = receverDados("Digite a renda do morador: ").nextDouble();
+        String cpfMor = receverDados("Digite o CPF do morador: ").nextLine();
         System.out.println("\n============================================");
-        Morador objMorador = new Morador(nomeMor, cpfMor, idadeMor, renda);
+        Morador objMorador = new Morador(nomeMor, idadeMor, renda);
         return objMorador;
     }
 
@@ -59,6 +58,16 @@ public class Sistema {
         return iptuvalidado;
     }
 
+    //validar CPF repetidos
+    public static void validarCPF(Inmovel inmovel,Morador morador) {
+        String cpfMor = receverDados("Digite o CPF do morador: ").nextLine();
+        for (Morador cpfReferencia: inmovel.getMoradores()) {
+
+        }
+        morador.getCpf();
+    }
+
+
     //passo 4 Cadastrar um inmovel
     public static Inmovel cadastroInmovel() {
         String endereco = receverDados("Digite o endereço do inmovel: ").nextLine();
@@ -66,18 +75,32 @@ public class Sistema {
         int quartos = receverDados("Digite o número de habitações do inmovel: ").nextInt();
         boolean iptu = validarIptu();
         String tipoDeVivienda = receverDados("Indique tipo de vivienda: ").nextLine();
-        int numMor = receverDados("Digite o numeros do Moradores a cadastrar no inmovel").nextInt();
-        Inmovel resCaracas = new Inmovel(endereco, valorAluguel, quartos, iptu, tipoDeVivienda, cadastroCorretor());
-        for (int i = 0; i < numMor; i++) {
-            resCaracas.adicionarMorador(cadastrarMorador());
-        }
-        return resCaracas;
-    }
-    //Adicionando mais de um inmovel
-    public static void addInmovelaMais(Inmobiliaria inmovels){
-        inmovels.cadastrarInmovelInmovi(cadastroInmovel());
 
-           }
+        Inmovel resCaracas = new Inmovel(endereco, valorAluguel, quartos, iptu, tipoDeVivienda, cadastroCorretor());
+
+        int numMor = receverDados("Digite o numeros do Moradores a cadastrar no inmovel").nextInt();
+        for (int i = 0; i < numMor; i++) {
+            Morador moradorNoInmovel = cadastrarMorador();
+            if (i == 1) {
+                resCaracas.adicionarMorador(moradorNoInmovel);
+            }
+            else if (i>1){
+            validarCPF(resCaracas, moradorNoInmovel);
+
+            }
+            return resCaracas;
+        }
+
+        //Adicionando mais de um inmovel
+        public static Inmovel addInmovelaMais(){
+            inmovels.cadastrarInmovelInmovi(cadastroInmovel());
+
+        }
+
+        //Excluir morador de um endereço específico
+        public static void excluirMorador (Inmobiliaria inmoveis){
+            String moradorRemover = receverDados("Digite o ").nextLine();
+        }
 
 // passo 2 adicionando objeto na Lista de moradores
 //    public static List moradoresEmLista() {
@@ -91,35 +114,37 @@ public class Sistema {
 //        return moradores;
 
 
+        public static void executar () {
+            Inmobiliaria casaDosSonos = new Inmobiliaria();
 
-    public static void executar() {
-        Inmobiliaria casaDosSonos = new Inmobiliaria();
+            boolean loopMenu = true;
+            while (loopMenu) {
+                menu();
+                int opcaoMenu = receverDados("Digite uma opção valida: ").nextInt();
+                if (opcaoMenu == 1) {
+                    System.out.println("1 . Cadastro do inmovel");
+                    System.out.println("============================================");
+                    addInmovelaMais(casaDosSonos);
+                    System.out.println("============================================");
+                } else if (opcaoMenu == 2) {
+                    System.out.println("2. Exibir dados do Inmovel");
+                    System.out.println("********************************************");
+                    System.out.println(casaDosSonos);
+                    System.out.println("********************************************");
 
-        boolean loopMenu = true;
-        while (loopMenu) {
-            menu();
-            int opcaoMenu = receverDados("Digite uma opção valida: ").nextInt();
-            if (opcaoMenu == 1) {
-                System.out.println("1 . Cadastro do inmovel");
-                System.out.println("============================================");
-                addInmovelaMais(casaDosSonos);
-                System.out.println("============================================");
+                } else if (opcaoMenu == 3) {
+                    System.out.println("3. Excluir morador no inmovel");
+                    System.out.println("********************************************");
 
-
-            } else if (opcaoMenu == 2) {
-                System.out.println("2. Exibir dados do Inmovel");
-                System.out.println("********************************************");
-                System.out.println(casaDosSonos);
-                System.out.println("********************************************");
-
-            } else if (opcaoMenu == 3) {
-                System.out.println("Saindo do sistema");
-                loopMenu = false;
-            } else {
-                System.out.print("Digite uma opção valida do menu ");
+                    System.out.println("********************************************");
+                } else if (opcaoMenu == 5) {
+                    System.out.println("Saindo do sistema");
+                    loopMenu = false;
+                } else {
+                    System.out.print("Digite uma opção valida do menu ");
+                }
             }
         }
+
+
     }
-
-
-}

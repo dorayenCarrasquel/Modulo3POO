@@ -11,7 +11,11 @@ public class Morador extends Pessoa {
         this.idade = idade;
         this.renda = renda;
     }
-
+    public Morador(String nome, int idade, Double renda) {
+        super(nome);
+        this.idade = idade;
+        this.renda = renda;
+    }
     //Getters & Setters
 
     public int getIdade() {
