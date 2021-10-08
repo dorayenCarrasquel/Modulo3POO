@@ -7,7 +7,7 @@ public class Sistema {
         System.out.println(mensagem);
         return new Scanner(System.in);
     }
-    public static Consumidor cadastrarConsumidor(){
+    public static Consumidor cadastrarConsumidor()throws Exception{
         System.out.println("***  Dados do Cliente ***");
         String nome = receverDados("\nDigite o nome do Consumidor: ").nextLine();
         String email = receverDados("Digite o e-mail do consumidor: ").nextLine();

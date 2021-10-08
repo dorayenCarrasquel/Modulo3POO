@@ -3,13 +3,13 @@ package br.com.zup.GerenciaFaturas;
 public class Consumidor {
     private String nome;
     private String email;
-    private String tipoPessoa;
+    private TipoConsumidor tipoPessoa;
 
     public Consumidor() {
 
     }
 
-    public Consumidor(String nome, String email, String tipoPessoa) {
+    public Consumidor(String nome, String email, TipoConsumidor tipoPessoa) {
         this.nome = nome;
         this.email = email;
         this.tipoPessoa = tipoPessoa;
@@ -32,11 +32,11 @@ public class Consumidor {
         this.email = email;
     }
 
-    public String getTipoPessoa() {
+    public TipoConsumidor getTipoPessoa() {
         return tipoPessoa;
     }
 
-    public void setTipoPessoa(String tipoPessoa) {
+    public void setTipoPessoa(TipoConsumidor tipoPessoa) {
         this.tipoPessoa = tipoPessoa;
     }
 
