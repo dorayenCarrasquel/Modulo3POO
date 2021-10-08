@@ -15,4 +15,12 @@ public class Sistema {
 
         return ServiceConsumidor.cadastrarConsumidor(nome, email, tipoPessoa);
     }
+
+    public static Fatura cadastrarFatura() throws Exception{
+        System.out.println("*** Dados da Fatura ***");
+        String email = receverDados("Digite o email do cliente:").nextLine();
+        double valor = receverDados("Digite o valor a pagar: ").nextDouble();
+        String dataVencimento = receverDados("Digite a data de Vencimento: ").nextLine();
+        return ServiceFatura.cadastrarFatura(email,dataVencimento,valor);
+    }
 }
